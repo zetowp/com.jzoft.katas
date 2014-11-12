@@ -5,18 +5,18 @@ import java.util.List;
 
 public class FactoresPrimos {
 
-	public List<Integer> buscarFactoresPrimos(int numero) {
-		ArrayList<Integer> listaDeFactores = new ArrayList<Integer>();
-		for (int primo = 2; primo <= numero; primo++) {
-			aniadirPrimo(listaDeFactores, primo, numero);
+	public List<Integer> buscarFactoresPrimos(final int numero) {
+		int aEvaluar = numero;
+		final ArrayList<Integer> listaDeFactores = new ArrayList<Integer>();
+		for (int primo = 2; primo <= aEvaluar;) {
+			if (numero % primo == 0) {
+				listaDeFactores.add(primo);
+				aEvaluar = aEvaluar / primo;
+			} else {
+				primo++;
+			}
 		}
 		return listaDeFactores;
-	}
-
-	private void aniadirPrimo(ArrayList<Integer> listaDeFactores, int primo, int numero) {
-		if (numero % primo == 0) {
-			listaDeFactores.add(primo);
-		}
 	}
 
 }
