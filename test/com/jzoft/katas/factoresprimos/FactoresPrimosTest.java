@@ -8,15 +8,15 @@ import org.junit.Test;
 
 public class FactoresPrimosTest {
 	
+	private FactoresPrimos factorador;
+
 	@Test
 	public void setUp() throws Exception {
-		FactoresPrimos factorador = new FactoresPrimos();
-		assertNotNull(factorador);
+		this.factorador = new FactoresPrimos();
 	}
 	
 	@Test
 	public void dadoUno_regresaVacio() throws Exception {
-		FactoresPrimos factorador = new FactoresPrimos();
 		List<Integer> factores = factorador.buscarFactoresPrimos(1);
 		assertEquals(0, factores.size());
 	}
