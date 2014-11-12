@@ -31,6 +31,7 @@ public class FactoresPrimosTest {
 		assertNumeroGeneraFactoresPrimos(3, 3);
 		assertNumeroGeneraFactoresPrimos(4, 2, 2);
 		assertNumeroGeneraFactoresPrimos(5, 5);
+		assertNumeroGeneraFactoresPrimos(6, 2, 3);
 	}
 
 }
