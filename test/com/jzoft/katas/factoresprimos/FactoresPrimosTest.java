@@ -38,4 +38,12 @@ public class FactoresPrimosTest {
 		assertFactoresPrimos(3);
 	}
 
+	@Test
+	public void dadoCuatro_regresaDosYDos() throws Exception {
+		List<Integer> factores = factorador.buscarFactoresPrimos(4);
+		assertEquals(2, factores.size());
+		assertEquals(2, factores.get(0).byteValue());
+		assertEquals(2, factores.get(1).byteValue());
+	}
+
 }
