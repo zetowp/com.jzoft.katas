@@ -16,7 +16,7 @@ public class FactoresPrimosTest {
 		this.factorador = new FactoresPrimos();
 	}
 
-	private void assertFactoresPrimos(final int numeroAEvaluar, final int... valores) {
+	private void assertNumeroGeneraFactoresPrimos(final int numeroAEvaluar, final int... valores) {
 		final List<Integer> factores = factorador.buscarFactoresPrimos(numeroAEvaluar);
 		assertEquals(valores.length, factores.size());
 		for (int i = 0; i < valores.length; i++) {
@@ -25,28 +25,12 @@ public class FactoresPrimosTest {
 	}
 
 	@Test
-	public void dadoUno_regresaVacio() throws Exception {
-		assertFactoresPrimos(1);
-	}
-
-	@Test
-	public void dadoDos_regresaListaConSoloDos() throws Exception {
-		assertFactoresPrimos(2, 2);
-	}
-
-	@Test
-	public void dadoTres_regresaListaConSoloTres() throws Exception {
-		assertFactoresPrimos(3, 3);
-	}
-
-	@Test
-	public void dadoCuatro_regresaDosYDos() throws Exception {
-		assertFactoresPrimos(4, 2, 2);
-	}
-
-	@Test
-	public void dadoCinco_regresaCinco() throws Exception {
-		assertFactoresPrimos(5, 5);
+	public void dadoNumero_regresaSusFacotresPrimos() throws Exception {
+		assertNumeroGeneraFactoresPrimos(1);
+		assertNumeroGeneraFactoresPrimos(2, 2);
+		assertNumeroGeneraFactoresPrimos(3, 3);
+		assertNumeroGeneraFactoresPrimos(4, 2, 2);
+		assertNumeroGeneraFactoresPrimos(5, 5);
 	}
 
 }
