@@ -7,12 +7,16 @@ public class FactoresPrimos {
 
 	public List<Integer> buscarFactoresPrimos(int numero) {
 		ArrayList<Integer> listaDeFactores = new ArrayList<Integer>();
-		if (numero % 2 == 0) {
-			listaDeFactores.add(2);
-		} else if (numero % 3 == 0) {
-			listaDeFactores.add(3);
+		for (int primo = 2; primo <= numero; primo++) {
+			aniadirPrimo(listaDeFactores, primo, numero);
 		}
 		return listaDeFactores;
+	}
+
+	private void aniadirPrimo(ArrayList<Integer> listaDeFactores, int primo, int numero) {
+		if (numero % primo == 0) {
+			listaDeFactores.add(primo);
+		}
 	}
 
 }

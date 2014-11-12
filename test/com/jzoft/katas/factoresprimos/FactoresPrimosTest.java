@@ -16,6 +16,12 @@ public class FactoresPrimosTest {
 		this.factorador = new FactoresPrimos();
 	}
 
+	private void assertFactoresPrimos(int numeroAEvaluar) {
+		List<Integer> factores = factorador.buscarFactoresPrimos(numeroAEvaluar);
+		assertEquals(1, factores.size());
+		assertEquals(numeroAEvaluar, factores.get(0).byteValue());
+	}
+
 	@Test
 	public void dadoUno_regresaVacio() throws Exception {
 		List<Integer> factores = factorador.buscarFactoresPrimos(1);
@@ -24,17 +30,12 @@ public class FactoresPrimosTest {
 
 	@Test
 	public void dadoDos_regresaListaConSoloDos() throws Exception {
-		List<Integer> factores = factorador.buscarFactoresPrimos(2);
-		assertEquals(1, factores.size());
-		assertEquals(2, factores.get(0).byteValue());
+		assertFactoresPrimos(2);
 	}
 
 	@Test
 	public void dadoTres_regresaListaConSoloTres() throws Exception {
-		List<Integer> factores = factorador.buscarFactoresPrimos(3);
-		assertEquals(1, factores.size());
-		assertEquals(3, factores.get(0).byteValue());
-
+		assertFactoresPrimos(3);
 	}
 
 }
