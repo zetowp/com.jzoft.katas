@@ -44,4 +44,9 @@ public class FactoresPrimosTest {
 		assertFactoresPrimos(4, 2, 2);
 	}
 
+	@Test
+	public void dadoCinco_regresaCinco() throws Exception {
+		assertFactoresPrimos(5, 5);
+	}
+
 }
